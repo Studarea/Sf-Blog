@@ -1,0 +1,38 @@
+
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name= »description » content= »La description de page géniale !=)" » />
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css' ) }}" >
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+
+
+<main>
+    <section>
+
+
+        {#  le premier c'est la variable de twig in nom de la variable du controleur #}
+        {% for article in articles %}
+
+
+            <img src="{{ article.image }}" alt="image" class="img"/>
+            <p>{{ article.title }}</p>
+            <p>{{ article.content }}</p>
+            <p>{{ article.datecreated|date("m/d/Y") }}</p>
+            <p>{{ article.datepublished|date("m/d/Y") }}</p>
+
+
+        {% endfor %}
+    </section>
+
+</main>
+
+</body>
+</html>
