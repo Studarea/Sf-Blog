@@ -9,23 +9,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name= »description » content= »La description de page géniale !=)" » />
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css' ) }}" >
-    <title>{% block title %}PAGE D'UNE CATEGORIE{% endblock title %}</title>
+    <title>{% block title %}PAGE D'UN ARTICLE{% endblock title %}</title>
 </head>
 <body>
 
 
 <main>
+
     <section>
 
-
-        {#  le premier c'est la variable de twig in nom de la variable du controleur #}
-
-            <p style="color:{{ category.color }}">{{ category.title }}</p>
-            <p>{{ category.datecreated|date("m/d/Y") }}</p>
-            <p>{{ category.datepublished|date("m/d/Y") }}</p>
-
+            <img src="{{ article.image }}" alt="image" class="img"/>
+            <p>{{ article.title }}</p>
+            <p>{{ article.content }}</p>
+            <p>{{ article.datecreated|date("m/d/Y") }}</p>
+            <p>{{ article.datepublished|date("m/d/Y") }}</p>
 
     </section>
+
 
 </main>
 

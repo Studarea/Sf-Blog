@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name= »description » content= »La description de page géniale !=)" » />
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css' ) }}" >
-    <title>{% block title %}{% endblock title %}</title>
+    <title>{% block title %}LES ARTICLES{% endblock title %}</title>
 </head>
 <body>
 
@@ -21,15 +21,14 @@
         {#  le premier c'est la variable de twig in nom de la variable du controleur #}
         {% for article in articles %}
 
-
-            <img src="{{ article.image }}" alt="image" class="img"/>
-            <p>{{ article.title }}</p>
-            <p>{{ article.content }}</p>
+            <div class="container" ><a href="{{ path('article_show', {'id': article.id}) }}"><img src="{{ article.image }}" alt="image" class="img"/></a>
+            <p>{{ article.title }} </p><br />
+            <a href="{{ path('article_show', {'id': article.id}) }}"><p>{{ article.content }}</p></a>
             <p>{{ article.datecreated|date("m/d/Y") }}</p>
-            <p>{{ article.datepublished|date("m/d/Y") }}</p>
-
+            <p>{{ article.datepublished|date("m/d/Y") }}</p></div>
 
         {% endfor %}
+
     </section>
 
 </main>
