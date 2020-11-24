@@ -20,10 +20,11 @@
 
         {#  le premier c'est la variable de twig in nom de la variable du controleur #}
         {% for article in articles %}
-
+            {# je fais le lien vers la page article  #}
             <div class="container" ><a href="{{ path('article_show', {'id': article.id}) }}"><img src="{{ article.image }}" alt="image" class="img"/></a>
             <p>{{ article.title }} </p><br />
             <a href="{{ path('article_show', {'id': article.id}) }}"><p>{{ article.content }}</p></a>
+            {# j'affiche la date de création et publiée en ajoutant le filtre qui affiche correctmt la date  #}
             <p>{{ article.datecreated|date("m/d/Y") }}</p>
             <p>{{ article.datepublished|date("m/d/Y") }}</p></div>
 

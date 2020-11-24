@@ -20,14 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categorys.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorys.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorys.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606143877670</updated>
       <workItem from="1606143878764" duration="4470000" />
-      <workItem from="1606204513443" duration="13932000" />
+      <workItem from="1606204513443" duration="15995000" />
     </task>
     <servers />
   </component>
@@ -226,5 +227,9 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="229" y="80" key="SettingsEditor/0.23.1440.836@0.23.1440.836" timestamp="1606207892144" />
+    <state x="385" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1606230745545">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="385" y="183" width="670" height="676" key="search.everywhere.popup/0.23.1440.836@0.23.1440.836" timestamp="1606230745545" />
   </component>
 </project>

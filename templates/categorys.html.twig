@@ -20,8 +20,9 @@
 
         {#  le premier c'est la variable de twig in nom de la variable du controleur #}
         {% for category in categorys %}
-
+            {# je fais le lien vers la page category  #}
             <a href="{{ path('category_show', {'id': category.id}) }}"><p>{{ category.title }}</p></a>
+            {# j'affiche la date de création et publiée en ajoutant le filtre qui affiche correctmt la date  #}
             <p>{{ category.datecreated|date("m/d/Y") }}</p>
             <p>{{ category.datepublished|date("m/d/Y") }}</p>
 

@@ -17,13 +17,10 @@
 <main>
     <section>
 
-
-        {#  le premier c'est la variable de twig in nom de la variable du controleur #}
-
             <p style="color:{{ category.color }}">{{ category.title }}</p>
+            {# j'affiche la date de création et publiée en ajoutant le filtre qui affiche correctmt la date  #}
             <p>{{ category.datecreated|date("m/d/Y") }}</p>
             <p>{{ category.datepublished|date("m/d/Y") }}</p>
-
 
     </section>
 

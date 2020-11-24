@@ -19,10 +19,10 @@ class CategoryController extends AbstractController
 
         $category = $categoryRepository->findAll();
 
-
+        // je retourne la vue avec Twig qui compile la page en HTML
         return $this->render('categorys.html.twig', [
 
-            // ici je fait le lien avec la variable à mon fichier html.twig'
+            // je fais le lien avec mon fichier Twig
             'categorys' => $category
 
         ]);
@@ -42,11 +42,12 @@ class CategoryController extends AbstractController
 
     public function categoryShow($id, CategoryRepository $categoryRepository)
     {
-        // j'utilise l'articleRepository avec la méthode find
+        // j'utilise categoryRepository avec la méthode find
         // pour faire une requête SQL SELECT en BDD
-        // et retrouver l'article dont l'id correspond à l'id passé en URL
+        // et retrouver la category dont l'id correspond à l'id passé en URL
         $category = $categoryRepository->find($id);
 
+        // je retourne la vue avec Twig qui compile la page en HTML
         return $this->render('category.html.twig', [
 
             'category' => $category

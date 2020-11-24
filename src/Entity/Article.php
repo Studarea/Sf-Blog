@@ -8,6 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 
+// Dans article : id, title, content, image, date de publication, date de création, est publié ? (oui / non)
+
+
+// L'annotation Entity spécifie que la classe est considérée en tant qu'entité.
+// L'attribut le plus important est repositoryClass, qui permet de spécifier un repository spécifique pour l'entité
+// L'annotation Id identifie la clé primaire de la table.
+
+
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductRepository")
  */
@@ -20,6 +28,10 @@ class Article
     // J'ai créé autant de propriétés que de colonnes voulues dans la table
     // et j'ai mappé les propriétés avec des annotations et la classe ORM
     // (attention de ne pas oublier le use correspondant)
+
+    // je créer la clé primaire ID
+    // j'autoincrémente la valeur de l'ID
+    // je créer une colonne de type intéger
 
     /**
      * @ORM\Id()

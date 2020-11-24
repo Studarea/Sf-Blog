@@ -19,15 +19,14 @@ class ArticleController extends AbstractController
         $articles = $articleRepository->findAll();
 
 
+        // je retourne la vue avec Twig qui compile la page en HTML
         return $this->render('articles.html.twig', [
 
-            // ici je fait le lien avec la variable à mon fichier html.twig'
+            // je fais le lien avec mon fichier Twig
             'articles' => $articles
 
         ]);
-
     }
-
 
 
     /**
@@ -49,6 +48,7 @@ class ArticleController extends AbstractController
         // et retrouver l'article dont l'id correspond à l'id passé en URL
         $article = $articleRepository->find($id);
 
+        // je retourne la vue avec Twig qui compile la page en HTML
         return $this->render('article.html.twig', [
 
             'article' => $article
@@ -56,10 +56,5 @@ class ArticleController extends AbstractController
 
 
     }
-
-
-
-
-
 
 }
