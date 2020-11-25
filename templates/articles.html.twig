@@ -30,6 +30,7 @@
                 <p>{{ article.datepublished|date("m/d/Y") }}</p>
                 <br />
                 {#  Je créer le lien qui va modifier un article de la liste via son id #}
+                {# fonction PATH #}
                 <a href="{{ path('article_update_static', {'id': article.id}) }}"><div>modifier le titre de cet article</div></a>
             </div>
 

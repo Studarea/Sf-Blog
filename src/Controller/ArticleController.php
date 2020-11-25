@@ -123,6 +123,7 @@ class ArticleController extends AbstractController
         // j'instancie la classe d'entité (un obbjet constituant un exemplaire de la classe) Article
 
         // je cible la modification dans ma page update_ via l'ID
+        // ce la selectionne l'id de la base de donnée (SELECT ...FROM ...WHERE id)
 
         $article = $articleRepository->find($id);
 
@@ -130,6 +131,8 @@ class ArticleController extends AbstractController
         // je retourne la modification du titre de mon article
 
         $article->setTitle("A la piscine on fait plouf !!!");
+        $article->setDateCreated(new \DateTime());
+        $article->setDatePublished(new \DateTime());
 
         // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
         // un peu comme un commit dans Git)
