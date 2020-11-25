@@ -1,12 +1,38 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Super page !" />
+    <link rel="stylesheet" href="{{ asset('assets/css/styles.css' ) }}" >
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+{# création du header avec les liens vers les pages #}
+<header>
+    <div>
+        <div id="logo"><a href="{{ path('') }}">
+                <img src="{{ asset('') }}" alt="logo" class="img"/></a></div>
+        <div id="nav">
+            <ul>
+                <a href="{{ path('') }}"><li>Home Page</li></a>
+                <a href="{{ path('') }}"><li></li></a>
+                <a href="{{ path('') }}"><li></li></a>
+                <a href="{{ path('') }}"><li></li></a>
+            </ul>
+        </div>
+    </div>
+</header>
+
+{% block content %} {% endblock %}
+
+
+<footer>
+    <div id="logo-footer"><a href="{{ path('') }}">
+            <img src="{{ asset('') }}" alt="logo" class="img"/></a>
+    </div>
+    <div>Les cours avec David c'est de la boulette ! =)</div>
+</footer>
+</body>
 </html>

@@ -20,15 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/insert_category.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/insert_static.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categorys.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categorys.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +182,10 @@
       <option name="presentableId" value="Default" />
       <updated>1606143877670</updated>
       <workItem from="1606143878764" duration="4470000" />
-      <workItem from="1606204513443" duration="15995000" />
+      <workItem from="1606204513443" duration="16520000" />
+      <workItem from="1606246705446" duration="2519000" />
+      <workItem from="1606284686675" duration="169000" />
+      <workItem from="1606290880710" duration="4806000" />
     </task>
     <servers />
   </component>
@@ -201,16 +202,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="478" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606212164422">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="478" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.836@0.23.1440.836" timestamp="1606212164422" />
-    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606225154186">
+    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606298463829">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606225154186" />
+    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606298463829" />
     <state x="600" y="345" key="Github.ShareDialog" timestamp="1606146693382">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
