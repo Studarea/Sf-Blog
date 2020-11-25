@@ -91,8 +91,8 @@ class ArticleController extends AbstractController
         $article->setDatePublished(new \DateTime());
         $article->setPublished(true);
 
-        // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité (un peu comme un commit
-        // dans Git)
+        // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
+        //(un peu comme un commit dans Git)
         $entityManager->persist($article);
 
         // j'utilise la méthode flush de l'EntityManager pour insérer en BDD toutes les entités
@@ -106,7 +106,39 @@ class ArticleController extends AbstractController
     }
 
 
+    /**
+     *
+     * @Route("/article/update-static/{id}", name="article_update_static")
+     *
+     * en parametre de la méthode, je récupère la valeur de la wildcard id
+     * et je demande en plus à symfony d'instancier pour moi
+     * la classe ArticleRepository dans une variable $articleRepository
+     * (autowire)
+     */
 
 
+    public function updateStaticArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
+    {
+
+        // j'instancie la classe d'entité (un obbjet constituant un exemplaire de la classe) Article
+
+        // je cible la modification dans ma page update_ via l'ID
+
+        $article = $articleRepository->find($id);
+
+
+        // je retourne la modification du titre de mon article
+
+        $article->setTitle("A la piscine on fait plouf !!!");
+
+        // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
+        // un peu comme un commit dans Git)
+        $entityManager->persist($article);
+        $entityManager->flush();
+
+
+        // j'affiche le rendu d'un fichier twig
+        return $this->render('update_static.html.twig');
+    }
 
 }
