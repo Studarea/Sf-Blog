@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/delete_static.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles.html.twig" afterDir="false" />
@@ -182,7 +183,7 @@
       <workItem from="1606246705446" duration="2519000" />
       <workItem from="1606284686675" duration="169000" />
       <workItem from="1606290880710" duration="5851000" />
-      <workItem from="1606307972884" duration="5017000" />
+      <workItem from="1606307972884" duration="7446000" />
     </task>
     <servers />
   </component>

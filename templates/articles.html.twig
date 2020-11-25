@@ -20,7 +20,7 @@
         {#  le premier c'est la variable de twig in nom de la variable du controleur #}
 
         {% for article in articles %}
-            {# je fais le lien vers la page article  #}
+            {# je fais le lien vers la page article #}
             <div class="container" ><a href="{{ path('article_show', {'id': article.id}) }}">
                 <img src="{{ article.image }}" alt="image" class="img"/></a>
                 <p>{{ article.title }} </p><br />
@@ -28,21 +28,23 @@
                 {# j'affiche la date de création et publiée en ajoutant le filtre qui affiche correctmt la date  #}
                 <p>{{ article.datecreated|date("m/d/Y") }}</p>
                 <p>{{ article.datepublished|date("m/d/Y") }}</p>
-                <br />
+                <br /><br />
+                {# PATH est une fonction #}
                 {#  Je créer le lien qui va modifier un article de la liste via son id #}
-                {# fonction PATH #}
-                <a href="{{ path('article_update_static', {'id': article.id}) }}"><div>modifier le titre de cet article</div></a>
+                <a href="{{ path('article_update_static', {'id': article.id}) }}">
+                    <div>> modifier le titre de cet article</div></a><br />
+
+                {#  Je créer le lien qui va supprimer un article de la liste via son id #}
+                <a href="{{ path('article_delete_static', {'id': article.id}) }}">
+                    <div>> sucrer cet article !</div></a><br />
+
+                {#  Je créer le lien qui va recréer un article  #}
+                <a href="{{ path('article_insert_static', {'id': article.id}) }}">
+                    <div>> créer un nouvel article</div></a>
             </div>
-
-
-
         {% endfor %}
 
-
-
-
     </section>
-
 </main>
 
 </body>

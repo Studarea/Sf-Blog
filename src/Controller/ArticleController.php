@@ -62,6 +62,8 @@ class ArticleController extends AbstractController
 
     /**
      *
+     * JE CREER UNE METHODE POUR CREER ' insérer ' UN ARTICLE
+     *
      * @Route("/article/insert-static", name="article_insert_static")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
@@ -108,6 +110,8 @@ class ArticleController extends AbstractController
 
     /**
      *
+     * JE CREER UNE METHODE POUR METTRE A JOUR UN ARTICLE
+     *
      * @Route("/article/update-static/{id}", name="article_update_static")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
@@ -142,6 +146,46 @@ class ArticleController extends AbstractController
 
         // j'affiche le rendu d'un fichier twig
         return $this->render('update_static.html.twig');
+    }
+
+    /**
+     *
+     * JE CREER UNE METHODE POUR SUPPRIMER UN ARTICLE
+     *
+     * @Route("/article/delete-static/{id}", name="article_delete_static")
+     *
+     * en parametre de la méthode, je récupère la valeur de la wildcard id
+     * et je demande en plus à symfony d'instancier pour moi
+     * la classe ArticleRepository dans une variable $articleRepository
+     * (autowire)
+     */
+
+
+    public function deleteStaticArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
+    {
+
+        // j'instancie la classe d'entité (un obbjet constituant un exemplaire de la classe) Article
+
+        // je cible la modification dans ma page update_ via l'ID
+        // ce la selectionne l'id de la base de donnée (SELECT ...FROM ...WHERE id)
+
+        $article = $articleRepository->find($id);
+
+        // je supprime un article
+
+
+        // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
+        // un peu comme un commit dans Git)
+        $entityManager->remove($article);
+        $entityManager->flush();
+
+        if (!is_null($article)){
+            $entityManager->remove($article);
+            $entityManager->flush();
+
+        }
+        // j'affiche le rendu d'un fichier twig
+        return $this->render('delete_static.html.twig');
     }
 
 }
