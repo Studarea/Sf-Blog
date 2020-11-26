@@ -152,7 +152,7 @@ class ArticleController extends AbstractController
      *
      * JE CREER UNE METHODE POUR SUPPRIMER UN ARTICLE
      *
-     * @Route("/article/delete-static/{id}", name="article_delete_static")
+     * @Route("/article/article_delete/{id}", name="article_delete")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
      * et je demande en plus à symfony d'instancier pour moi
@@ -176,16 +176,21 @@ class ArticleController extends AbstractController
 
         // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
         // un peu comme un commit dans Git)
-        $entityManager->remove($article);
-        $entityManager->flush();
+
 
         if (!is_null($article)){
             $entityManager->remove($article);
             $entityManager->flush();
 
+
+            $this->addFlash (
+                "success",
+                "Bien joué"
+            );
         }
-        // j'affiche le rendu d'un fichier twig
-        return $this->render('delete_static.html.twig');
+        // je fais une redirection vers la page liste des articles
+
+        return $this->redirectToRoute('article_list');
     }
 
 }

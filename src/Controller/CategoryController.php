@@ -93,7 +93,7 @@ class CategoryController extends AbstractController
 
 
         // j'affiche le rendu d'un fichier twig
-        return $this->render('insert_category.html.twig');
+        return $this->render('insert_static.html.twig');
 
     }
 

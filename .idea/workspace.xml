@@ -21,7 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/delete_static.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/delete_article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insert_category.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insert_static.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insert_static.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +162,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -181,7 +187,13 @@
       <workItem from="1606246705446" duration="2519000" />
       <workItem from="1606284686675" duration="169000" />
       <workItem from="1606290880710" duration="5851000" />
-      <workItem from="1606307972884" duration="7716000" />
+      <workItem from="1606307972884" duration="8184000" />
+      <workItem from="1606331716103" duration="50000" />
+      <workItem from="1606339590100" duration="1646000" />
+      <workItem from="1606372095370" duration="380000" />
+      <workItem from="1606377947331" duration="232000" />
+      <workItem from="1606378224598" duration="598000" />
+      <workItem from="1606380380815" duration="5132000" />
     </task>
     <servers />
   </component>
@@ -225,6 +237,10 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="229" y="80" key="SettingsEditor/0.23.1440.836@0.23.1440.836" timestamp="1606207892144" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1606385770096">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.23.1440.836@0.23.1440.836" timestamp="1606385770096" />
     <state x="385" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1606230745545">
       <screen x="0" y="23" width="1440" height="836" />
     </state>

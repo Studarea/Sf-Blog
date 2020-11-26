@@ -1,19 +1,12 @@
 
+{% extends 'base.html.twig' %}
 
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name= »description » content= »La description de page géniale !=)" » />
-    <link rel="stylesheet" href="{{ asset('assets/css/styles.css' ) }}" >
-    <title>{% block title %}LES ARTICLES{% endblock title %}</title>
-</head>
-<body>
+{% block title %}Les Articles{% endblock %}
 
 
+
+
+{% block main %}
 <main>
     <section>
 
@@ -35,7 +28,7 @@
                     <div>> modifier le titre de cet article</div></a><br />
 
                 {#  Je créer le lien qui va supprimer un article de la liste via son id #}
-                <a href="{{ path('article_delete_static', {'id': article.id}) }}">
+                <a href="{{ path('article_delete', {'id': article.id}) }}">
                     <div>> sucrer cet article !</div></a><br />
 
                 {#  Je créer le lien qui va recréer un article  #}
@@ -46,6 +39,4 @@
 
     </section>
 </main>
-
-</body>
-</html>
+{% endblock main %}
