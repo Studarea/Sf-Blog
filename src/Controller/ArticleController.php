@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Article;
+use App\Form\ArticleType;
 use App\Repository\articleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -64,7 +65,7 @@ class ArticleController extends AbstractController
      *
      * JE CREER UNE METHODE POUR CREER ' insérer ' UN ARTICLE
      *
-     * @Route("/article/insert-static", name="article_insert_static")
+     * @Route("/article/insert-form", name="article_form")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
      * et je demande en plus à symfony d'instancier pour moi
@@ -76,35 +77,27 @@ class ArticleController extends AbstractController
     public function insertStaticArticle(EntityManagerInterface $entityManager)
     {
 
-        // j'instancie la classe d'entité (un obbjet constituant un exemplaire de la classe) Article
+        // je veux afficher un formulaire pour créer des articles
+        // je créer le gabarit d'un formulaire via les lignes de commande :
+        // bin/console make:form
+        // ArticleType (nom du gabarit)
+        // Article (nom de l’entité)
 
-        // pour pouvoir définir les valeurs de ses propriétés
-        //(et donc créer un nouvel enregistrement dans la table article en BDD)
+        // à présent je récupère le gabarit de formulaire ArticleType.
+        // en utilisant la méthode createForm de l'AbstractController
+        // (et je lui passe en paramètre le gabarit de formulaire à créer)
 
-        $article = new Article();
+        $form=$this->createForm(ArticleType::class);
 
-        // Je définis les valeurs des propriétés de l'entité Article
-        // qui seront les valeurs des colonnes correspondantes en BDD
-
-        $article->setTitle("Titre de mon article");
-        $article->setContent("Titre de mon article");
-        $article->setImage("https://i-df.unimedias.fr/2017/06/07/piscine_katrinaelena.jpg?auto=format%2Ccompress&crop=faces&cs=tinysrgb&fit=crop&h=590&w=1050");
-        $article->setDateCreated(new \DateTime());
-        $article->setDatePublished(new \DateTime());
-        $article->setPublished(true);
-
-        // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
-        //(un peu comme un commit dans Git)
-        $entityManager->persist($article);
-
-        // j'utilise la méthode flush de l'EntityManager pour insérer en BDD toutes les entités
-        // "pré-sauvegardées" (persistées)
-        $entityManager->flush();
+        // je récupère le gabarit de ce formulaire
+        // et je créer une vue me permettant d'afficher le formulaire dans une page html.twig.
+        $formView = $form->createView();
 
 
-        // j'affiche le rendu d'un fichier twig
-        return $this->render('insert_static.html.twig');
-
+        // j'affiche le rendu d'un fichier twig compilé en HTML
+        return $this->render('insert_form.html.twig', [
+            'formView' => $formView
+        ]);
     }
 
 
@@ -148,6 +141,8 @@ class ArticleController extends AbstractController
         return $this->render('update_static.html.twig');
     }
 
+
+
     /**
      *
      * JE CREER UNE METHODE POUR SUPPRIMER UN ARTICLE
@@ -178,12 +173,16 @@ class ArticleController extends AbstractController
         // un peu comme un commit dans Git)
 
 
+        // si mon article n'est pas NULL alors je demande à supprimer l'article
+
         if (!is_null($article)){
             $entityManager->remove($article);
             $entityManager->flush();
 
-
-            $this->addFlash (
+            // $this = fait référence à la classe actuelle
+            // je cible la propriété addFlash demandant d'afficher un message après l'action delete
+            // et type "succès"
+            $this->addFlash(
                 "success",
                 "Bien joué"
             );

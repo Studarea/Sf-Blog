@@ -20,14 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/insert_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/delete_static.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/delete_article.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insert_category.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insert_static.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insert_static.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +160,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -193,7 +191,7 @@
       <workItem from="1606372095370" duration="380000" />
       <workItem from="1606377947331" duration="232000" />
       <workItem from="1606378224598" duration="598000" />
-      <workItem from="1606380380815" duration="5132000" />
+      <workItem from="1606380380815" duration="9177000" />
     </task>
     <servers />
   </component>
