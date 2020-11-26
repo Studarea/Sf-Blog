@@ -15,7 +15,7 @@ class ArticleType extends AbstractType
         // la ligne de commande bin/console make:form m'a permis de générer automatiquement ce fichier
         // c'est un gabarit de formulaire pour l'entité que j'ai spécifié en ligne de commande
 
-        // Builder est constructeur qui génère le formulaire
+        // Builder est un constructeur qui génère le formulaire
         $builder
             ->add('title')
             ->add('content')
