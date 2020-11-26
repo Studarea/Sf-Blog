@@ -7,6 +7,7 @@ use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\articleRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -74,8 +75,13 @@ class ArticleController extends AbstractController
      */
 
 
-    public function insertStaticArticle(EntityManagerInterface $entityManager)
+
+    // EntityManager gère les données avec Doctrine, permet le CUD (create, update, delete)
+    public function insertStaticArticle(Request $request, EntityManagerInterface $entityManager)
     {
+
+
+        $article = new Article ();
 
         // je veux afficher un formulaire pour créer des articles
         // je créer le gabarit d'un formulaire via les lignes de commande :
@@ -87,7 +93,23 @@ class ArticleController extends AbstractController
         // en utilisant la méthode createForm de l'AbstractController
         // (et je lui passe en paramètre le gabarit de formulaire à créer)
 
-        $form=$this->createForm(ArticleType::class);
+        // je lie mon formulaire à mon instance d'Article créé au dessus ( $article = new Article (); )
+        $form=$this->createForm(ArticleType::class, $article);
+
+        // Je viens lier le formulaire créé à la requête POST
+        // de cette manière je vais pouvoir utiliser la variable $form
+        // pour vérifier si les données POST ont été envoyées ou non
+
+        // la méthode handleRequest () permet de détecter quand le formulaire a été soumis.
+        // la méthode submit () connaissance des données soumises et du moment de l'envoi
+
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($article);
+            $entityManager->flush();
+         }
 
         // je récupère le gabarit de ce formulaire
         // et je créer une vue me permettant d'afficher le formulaire dans une page html.twig.
