@@ -75,8 +75,9 @@ class ArticleController extends AbstractController
      */
 
 
-
+    // Data Mapper :
     // EntityManager gère les données avec Doctrine, permet le CUD (create, update, delete)
+    // Entity Manager fait donc le lien entre les "Entités" (simples objets PHP), et la base de données :
     public function insertStaticArticle(Request $request, EntityManagerInterface $entityManager)
     {
 
@@ -96,13 +97,13 @@ class ArticleController extends AbstractController
         // je lie mon formulaire à mon instance d'Article créé au dessus ( $article = new Article (); )
         $form=$this->createForm(ArticleType::class, $article);
 
+        
         // Je viens lier le formulaire créé à la requête POST
         // de cette manière je vais pouvoir utiliser la variable $form
         // pour vérifier si les données POST ont été envoyées ou non
 
         // la méthode handleRequest () permet de détecter quand le formulaire a été soumis.
         // la méthode submit () connaissance des données soumises et du moment de l'envoi
-
 
         $form->handleRequest($request);
 
