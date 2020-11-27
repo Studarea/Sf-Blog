@@ -10,42 +10,43 @@
 <main>
 
 
-    <section class="block">
+    <section>
     {# j'utilise la fonction Twig form pour afficher mon formulaire  #}
     {#  avec en parametre la variable de formulaire #}
     {#  le gabarit et les données du formulaire qui execute dans twig  #}
-        <div><h1>Créer un nouvel Article</h1></div>
+
         <br />
         {{ form_start(formView) }}
 
+        <div class=""><h1>Créer un nouvel Article</h1></div>
+
         <div class="form">
 
+
             {{ form_label(formView.title) }}
+            {{ form_widget(formView.title, {'attr': {'class': 'margin'}}) }}
+
             {{ form_label(formView.content) }}
+            {{ form_widget(formView.content, {'attr': {'class': 'margin'}}) }}
+
+
             {{ form_label(formView.image) }}
+            {{ form_widget(formView.image, {'attr': {'class': 'margin'}}) }}
+
             {{ form_label(formView.datePublished) }}
-            {{ form_label(formView.datePublished) }}
+            {{ form_widget(formView.datePublished, {'attr': {'class': 'margin'}}) }}
+
             {{ form_label(formView.dateCreated) }}
+            {{ form_widget(formView.dateCreated, {'attr': {'class': 'margin'}}) }}
+
             {{ form_label(formView.published) }}
-        </div>
-        <div  class="form">
-                {{ form_widget(formView.title) }}
-                {{ form_widget(formView.content) }}
-                {{ form_widget(formView.image) }}
-                {{ form_widget(formView.datePublished) }}
-                {{ form_widget(formView.dateCreated) }}
-                {{ form_widget(formView.published) }}
-        </div>
+            {{ form_widget(formView.published, {'attr': {'class': 'margin'}}) }}
 
-
-        </div>
-
-
-
-        <div>
             {{ form_widget(formView.Envoyer) }}
+
         </div>
-        {{ form_end(formView) }}
+
+
 
     </section>
 

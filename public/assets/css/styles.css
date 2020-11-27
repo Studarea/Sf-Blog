@@ -55,16 +55,14 @@ header, footer {
 
 #nav {
     width:80%;
-    display: flex;
     display: inline-block;
     margin-bottom: 30px;
 }
 
 
 #logo {
-    width:120px;
+     width:120px;
     margin-right:20px;
-    display: flex;
     display: inline-block;
 }
 
@@ -87,9 +85,6 @@ section {
     width:100%;
 }
 
-.block {
-    width:30%;
-}
 
 .container {
     width:30%;
@@ -120,9 +115,16 @@ section {
 }
 
 .form {
-    display: inline-flex;
-    flex-direction: column;
+    width:200px;
+    margin:10px auto;
 }
-.form-margin {
-    margin-bottom:10px;
+
+
+.form-content {
+    width:100%;
+}
+
+.margin {
+    display: flex;
+    margin-bottom:20px;
 }
