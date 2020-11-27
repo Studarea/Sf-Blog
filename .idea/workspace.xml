@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/categories/admin/insert_form.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/categories/admin/update_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CategoriesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoriesType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/articles/admin/update_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/update_form.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/categories.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/front/categories.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/front/category.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +201,7 @@
       <workItem from="1606378224598" duration="598000" />
       <workItem from="1606380380815" duration="18252000" />
       <workItem from="1606413090128" duration="9493000" />
-      <workItem from="1606463712519" duration="15439000" />
+      <workItem from="1606463712519" duration="19901000" />
     </task>
     <servers />
   </component>
@@ -262,10 +254,10 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="229" y="80" key="SettingsEditor/0.23.1440.836@0.23.1440.836" timestamp="1606207892144" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1606385770096">
+    <state width="500" height="445" key="SwitcherDM" timestamp="1606488291107">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state width="500" height="445" key="SwitcherDM/0.23.1440.836@0.23.1440.836" timestamp="1606385770096" />
+    <state width="500" height="445" key="SwitcherDM/0.23.1440.836@0.23.1440.836" timestamp="1606488291107" />
     <state x="385" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1606402386473">
       <screen x="0" y="23" width="1440" height="836" />
     </state>

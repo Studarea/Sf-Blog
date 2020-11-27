@@ -118,3 +118,11 @@ section {
     height:20px;
     border-radius: 3px;
 }
+
+.form {
+    display: inline-flex;
+    flex-direction: column;
+}
+.form-margin {
+    margin-bottom:10px;
+}

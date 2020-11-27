@@ -16,7 +16,36 @@
     {#  le gabarit et les données du formulaire qui execute dans twig  #}
         <div><h1>Créer un nouvel Article</h1></div>
         <br />
-        <div>{{ form(formView) }}</div>
+        {{ form_start(formView) }}
+
+        <div class="form">
+
+            {{ form_label(formView.title) }}
+            {{ form_label(formView.content) }}
+            {{ form_label(formView.image) }}
+            {{ form_label(formView.datePublished) }}
+            {{ form_label(formView.datePublished) }}
+            {{ form_label(formView.dateCreated) }}
+            {{ form_label(formView.published) }}
+        </div>
+        <div  class="form">
+                {{ form_widget(formView.title) }}
+                {{ form_widget(formView.content) }}
+                {{ form_widget(formView.image) }}
+                {{ form_widget(formView.datePublished) }}
+                {{ form_widget(formView.dateCreated) }}
+                {{ form_widget(formView.published) }}
+        </div>
+
+
+        </div>
+
+
+
+        <div>
+            {{ form_widget(formView.Envoyer) }}
+        </div>
+        {{ form_end(formView) }}
 
     </section>
 
