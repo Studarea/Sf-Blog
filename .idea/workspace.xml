@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +198,7 @@
       <workItem from="1606378224598" duration="598000" />
       <workItem from="1606380380815" duration="18252000" />
       <workItem from="1606413090128" duration="9493000" />
-      <workItem from="1606463712519" duration="22406000" />
+      <workItem from="1606463712519" duration="22612000" />
     </task>
     <servers />
   </component>
