@@ -87,6 +87,10 @@ section {
     width:100%;
 }
 
+.block {
+    width:30%;
+}
+
 .container {
     width:30%;
     margin:20px;

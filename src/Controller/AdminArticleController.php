@@ -108,12 +108,7 @@ class AdminArticleController extends AbstractController
      */
 
     // autowire
-    public function updateArticle(
-        $id,
-        ArticleRepository $articleRepository,
-        EntityManagerInterface $entityManager,
-        Request $request
-    )
+    public function updateArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager, Request $request)
 
     {
 
@@ -173,7 +168,7 @@ class AdminArticleController extends AbstractController
      */
 
 
-    public function deleteStaticArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
+    public function deleteArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager)
     {
 
         // j'instancie la classe d'entité (un obbjet constituant un exemplaire de la classe) Article
@@ -182,8 +177,6 @@ class AdminArticleController extends AbstractController
         // ce la selectionne l'id de la base de donnée (SELECT ...FROM ...WHERE id)
 
         $article = $articleRepository->find($id);
-
-        // je supprime un article
 
 
 

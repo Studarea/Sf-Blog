@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -17,6 +18,7 @@ class CategoriesType extends AbstractType
             ->add('datePublished')
             ->add('dateCreated')
             ->add('published')
+            ->add('Envoyer', SubmitType::class)
         ;
     }
 

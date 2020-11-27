@@ -4,9 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
-use App\Form\ArticleType;
 use App\Form\CategoriesType;
-use App\Repository\articleRepository;
 use App\Repository\categoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +15,7 @@ class AdminCategoryController extends AbstractController
 {
 
     /**
-     * @Route("/categories/list", name="category_list")
+     * @Route("/admin/category/list", name="admin_category_list")
      */
     public function categoryList(categoryRepository $categoryRepository)
     {
@@ -25,7 +23,7 @@ class AdminCategoryController extends AbstractController
         $category = $categoryRepository->findAll();
 
         // je retourne la vue avec Twig qui compile la page en HTML
-        return $this->render('categories.html.twig', [
+        return $this->render('categories/admin/categories.html.twig', [
 
             // je fais le lien avec mon fichier Twig
             'categories' => $category
@@ -61,11 +59,11 @@ class AdminCategoryController extends AbstractController
     }
 
     /**
-     * @Route("admin/category/insert-form", name="admin_category_form")
+     * @Route("admin/category/insert-form", name="admin_category_insert")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
      * et je demande en plus à symfony d'instancier pour moi
-     * la classe ArticleRepository dans une variable $articleRepository
+     * la classe CategoryRepository dans une variable $CategoryRepository
      * (autowire)
      */
 
@@ -79,7 +77,7 @@ class AdminCategoryController extends AbstractController
         // j'instancie la classe d'entité (un obbjet constituant un exemplaire de la classe) Article
 
         // pour pouvoir définir les valeurs de ses propriétés
-        //(et donc créer un nouvel enregistrement dans la table article en BDD)
+        //(et donc créer un nouvel enregistrement dans la table catégorie en BDD)
         $form=$this->createForm(CategoriesType::class, $category);
 
         // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité (un peu comme un commit
@@ -94,22 +92,22 @@ class AdminCategoryController extends AbstractController
         }
 
         $formView = $form->createView();
+
         // j'affiche le rendu d'un fichier twig
-        return $this->render('admin/caterory/insert_form.html.twig', [
+        return $this->render('categories/admin/insert_form.html.twig', [
             'formView' => $formView
         ]);
-
     }
 
     /**
      *
-     * JE CREER UNE METHODE POUR METTRE A JOUR UN ARTICLE
+     * JE CREER UNE METHODE POUR METTRE A JOUR UNE CATEGORIE
      *
      * @Route("/admin/category/update/{id}", name="admin_category_update")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
      * et je demande en plus à symfony d'instancier pour moi
-     * la classe ArticleRepository dans une variable $articleRepository
+     * la classe CategoryRepository dans une variable $CategoryRepository
      * (autowire)
      */
 
@@ -124,15 +122,15 @@ class AdminCategoryController extends AbstractController
         // ce la selectionne l'id de la base de donnée (SELECT ...FROM ...WHERE id)
 
 
-        $article = $categoryRepository->find($id);
+        $category = $categoryRepository->find($id);
 
 
-        // je retourne la modification du titre de mon article
-        if (is_null($article)) {
+        // je retourne la modification du titre de ma categorie
+        if (is_null($category)) {
             return $this->redirectToRoute('admin_category_list');
         }
 
-        $form = $this->createForm(ArticleType::class, $article);
+        $form = $this->createForm(categoriesType::class, $category);
 
         $form->handleRequest($request);
 
@@ -141,12 +139,12 @@ class AdminCategoryController extends AbstractController
         // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
         // un peu comme un commit dans Git)
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($article);
+            $entityManager->persist($category);
             $entityManager->flush();
 
             $this->addFlash(
                 "success",
-                "L'article a été modifié !"
+                "La catégorie a été modifié !"
             );
 
             return $this->redirectToRoute('admin_category_list');
@@ -163,13 +161,13 @@ class AdminCategoryController extends AbstractController
 
     /**
      *
-     * JE CREER UNE METHODE POUR SUPPRIMER UN ARTICLE
+     * JE CREER UNE METHODE POUR SUPPRIMER UNE CATEGORIE
      *
      * @Route("/admin/category_delete/{id}", name="admin_category_delete")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
      * et je demande en plus à symfony d'instancier pour moi
-     * la classe ArticleRepository dans une variable $articleRepository
+     * la classe Categoryepository dans une variable $categoryRepository
      * (autowire)
      */
 
@@ -182,16 +180,15 @@ class AdminCategoryController extends AbstractController
         // je cible la modification dans ma page update_ via l'ID
         // ce la selectionne l'id de la base de donnée (SELECT ...FROM ...WHERE id)
 
-        $article = $categoryRepository->find($id);
+        $category = $categoryRepository->find($id);
 
-        // je supprime un article
 
 
         // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
         // un peu comme un commit dans Git)
 
 
-        // si mon article n'est pas NULL alors je demande à supprimer l'article
+        // si ma catégorie n'est pas NULL alors je demande à supprimer la catégorie
 
         if (!is_null($category)){
             $entityManager->remove($category);
@@ -205,7 +202,7 @@ class AdminCategoryController extends AbstractController
                 "Bien joué"
             );
         }
-        // je fais une redirection vers la page liste des articles
+        // je fais une redirection vers la page liste des categories
 
         return $this->redirectToRoute('admin_category_list');
     }

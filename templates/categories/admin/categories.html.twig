@@ -1,0 +1,44 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Articles{% endblock %}
+
+
+
+
+{% block main %}
+
+<main>
+
+    <section>
+        <div><a href="{{ path('admin_category_insert') }}">créer une catégorie</a></div>
+    </section>
+    <section>
+
+
+        {#  le premier c'est la variable de twig in nom de la variable du controleur #}
+        {% for category in categories %}
+            <div class="container" >
+            {# je fais le lien vers la page category  #}
+            <a href="{{ path('category_show', {'id': category.id}) }}"><p>{{ category.title }}</p></a>
+            {# j'affiche la date de création et publiée en ajoutant le filtre qui affiche correctmt la date  #}
+            <p>{{ category.datecreated|date("m/d/Y") }}</p>
+            <p>{{ category.datepublished|date("m/d/Y") }}</p>
+            <br /><br />
+            <a href="{{ path('admin_category_update', {'id': category.id}) }}">
+                <div>> modifier cette catégorie</div></a><br />
+
+            {#  Je créer le lien qui va supprimer un article de la liste via son id #}
+            <a href="{{ path('admin_category_delete', {'id': category.id}) }}">
+                <div>> supprimer cette catégorie</div></a><br />
+
+            {#  Je créer le lien qui va recréer un article  #}
+            <a href="{{ path('admin_category_insert') }}">
+                <div>> créer une nouvelle categorie</div></a>
+        </div>
+        {% endfor %}
+
+    </section>
+
+</main>
+{% endblock main %}
