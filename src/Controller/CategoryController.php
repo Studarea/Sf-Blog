@@ -4,8 +4,10 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Form\CategoriesType;
 use App\Repository\categoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -13,7 +15,7 @@ class CategoryController extends AbstractController
 {
 
     /**
-     * @Route("/categorys/list", name="category_list")
+     * @Route("/categories/list", name="category_list")
      */
     public function categoryList(categoryRepository $categoryRepository)
     {
@@ -21,10 +23,10 @@ class CategoryController extends AbstractController
         $category = $categoryRepository->findAll();
 
         // je retourne la vue avec Twig qui compile la page en HTML
-        return $this->render('categorys.html.twig', [
+        return $this->render('categories.html.twig', [
 
             // je fais le lien avec mon fichier Twig
-            'categorys' => $category
+            'categories' => $category
 
         ]);
     }
@@ -41,7 +43,7 @@ class CategoryController extends AbstractController
      */
 
 
-    public function categoryShow($id, CategoryRepository $categoryRepository)
+    public function categorieshow($id, CategoryRepository $categoryRepository)
     {
         // j'utilise categoryRepository avec la méthode find
         // pour faire une requête SQL SELECT en BDD
@@ -57,7 +59,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category/insert-static", name="category_insert_static")
+     * @Route("admin/category/insert-form", name="admin_category_form")
      *
      * en parametre de la méthode, je récupère la valeur de la wildcard id
      * et je demande en plus à symfony d'instancier pour moi
@@ -66,7 +68,7 @@ class CategoryController extends AbstractController
      */
 
 
-    public function insertStaticArticle(EntityManagerInterface $entityManager)
+    public function insertStaticArticle(Request $request, EntityManagerInterface $entityManager)
     {
         //
 
@@ -76,24 +78,24 @@ class CategoryController extends AbstractController
 
         // pour pouvoir définir les valeurs de ses propriétés
         //(et donc créer un nouvel enregistrement dans la table article en BDD)
-
-        $category->setTitle("Titre de ma catégorie");
-        $category->setDateCreated(new \DateTime());
-        $category->setDatePublished(new \DateTime());
-        $category->setColor("yellow");
-        $category->setPublished(true);
+        $form=$this->createForm(CategoriesType::class, $category);
 
         // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité (un peu comme un commit
         // dans Git)
-        $entityManager->persist($category);
 
-        // j'utilise la méthode flush de l'EntityManager pour insérer en BDD toutes les entités
-        // "pré-sauvegardées" (persistées)
-        $entityManager->flush();
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($category);
+            $entityManager->flush();
+            return $this->redirectToRoute('admin_category_list');
+        }
 
+        $formView = $form->createView();
         // j'affiche le rendu d'un fichier twig
-        return $this->render('insert_static.html.twig');
+        return $this->render('caterory/admin/insert_form.html.twig', [
+            'formView' => $formView
+        ]);
 
     }
 

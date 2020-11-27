@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Les Articles{% endblock %}
+
+
+
+{% block main %}
+
+<main>
+
+
+    <section>
+    {# j'utilise la fonction Twig form pour afficher mon formulaire  #}
+    {#  avec en parametre la variable de formulaire #}
+    {#  le gabarit et les données du formulaire qui execute dans twig  #}
+        <div><h1>Créer un nouvel Article</h1><div>
+        <br />
+        <div>{{ form(formView) }}</div>
+
+    </section>
+
+</main>
+
+{% endblock main %}
+
+

@@ -12,12 +12,27 @@
 {# création du header avec les liens vers les pages #}
 <header>
 
-    {# la création d'une boucle est utile pour afficher plusieurs messages,
-    même si ici j'en ai qu'un seul #}
-    {# app. une variable globale définie dans TWIG et appelée via l’abstractController #}
-    {% for message in app.flashes('success') %}
-        <p>{{ message }}</p>
-    {% endfor %}
+    <header>
+        <div>
+            <div id="logo"><a href="{{ path('article_list') }}">
+                    <img src="{{ asset('assets/img/chimpanz-logo.jpg') }}" alt="logo" class="img"/></a></div>
+            <div id="nav">
+                <ul>
+                    <a href="{{ path('article_list') }}"><li>Les Articles</li></a>
+                    <a href=""><li>Les Catégories</li></a>
+                    <a href="{{ path('admin_article_list') }}"><li>Administration</li></a>
+                </ul>
+            </div>
+        </div>
+
+        {% for message in app.flashes('success') %}
+            <p>{{ message }}</p>
+        {% endfor %}
+
+    </header>
+
+
+
 
 </header>
 

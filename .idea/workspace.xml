@@ -20,11 +20,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/assets/img/chimpanz-logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/CategoriesType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/articles/admin/articles.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/articles/admin/update_form.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/articles/front/article.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insert_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insert_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/front/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categorys.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/categories.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insert_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/update_static.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,15 +171,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/categories" />
+      <recent name="$PROJECT_DIR$/templates/articles" />
+      <recent name="$PROJECT_DIR$/templates/front" />
+      <recent name="$PROJECT_DIR$/templates/admin" />
       <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Controller" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/templates/admin" />
+      <recent name="$PROJECT_DIR$/templates/front" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -190,7 +211,9 @@
       <workItem from="1606372095370" duration="380000" />
       <workItem from="1606377947331" duration="232000" />
       <workItem from="1606378224598" duration="598000" />
-      <workItem from="1606380380815" duration="13919000" />
+      <workItem from="1606380380815" duration="18252000" />
+      <workItem from="1606413090128" duration="9493000" />
+      <workItem from="1606463712519" duration="8422000" />
     </task>
     <servers />
   </component>
@@ -210,22 +233,27 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="478" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606212164422">
+    <state x="443" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606470224063">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state x="478" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.836@0.23.1440.836" timestamp="1606212164422" />
-    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606298463829">
+    <state x="443" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.836@0.23.1440.836" timestamp="1606470224063" />
+    <state x="458" y="195" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606464245345">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606298463829" />
+    <state x="458" y="195" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606464245345" />
+    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606472719595">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606472719595" />
     <state x="600" y="345" key="Github.ShareDialog" timestamp="1606146693382">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="600" y="345" key="Github.ShareDialog/0.23.1440.836@0.23.1440.836" timestamp="1606146693382" />
-    <state x="467" y="174" key="NewPhpClassDialog" timestamp="1606211360331">
-      <screen x="0" y="23" width="1440" height="836" />
+    <state x="1959" y="228" key="NewPhpClassDialog" timestamp="1606414355552">
+      <screen x="1440" y="23" width="1600" height="1136" />
     </state>
-    <state x="467" y="174" key="NewPhpClassDialog/0.23.1440.836@0.23.1440.836" timestamp="1606211360331" />
+    <state x="467" y="174" key="NewPhpClassDialog/0.23.1440.836@0.23.1440.836" timestamp="1606406920949" />
+    <state x="1959" y="228" key="NewPhpClassDialog/0.23.1440.877/1440.23.1600.1136@1440.23.1600.1136" timestamp="1606414355552" />
     <state x="543" y="371" key="NewPhpFileDialog" timestamp="1606211226291">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
