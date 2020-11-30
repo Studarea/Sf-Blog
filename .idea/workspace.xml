@@ -21,6 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,7 +161,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/categories/admin" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -198,7 +201,11 @@
       <workItem from="1606378224598" duration="598000" />
       <workItem from="1606380380815" duration="18252000" />
       <workItem from="1606413090128" duration="9493000" />
-      <workItem from="1606463712519" duration="22612000" />
+      <workItem from="1606463712519" duration="23533000" />
+      <workItem from="1606511254713" duration="4499000" />
+      <workItem from="1606551065626" duration="12502000" />
+      <workItem from="1606718603421" duration="1058000" />
+      <workItem from="1606723827471" duration="7334000" />
     </task>
     <servers />
   </component>
@@ -247,14 +254,15 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="543" y="371" key="NewPhpFileDialog/0.23.1440.836@0.23.1440.836" timestamp="1606211226291" />
-    <state x="229" y="80" key="SettingsEditor" timestamp="1606207892144">
+    <state x="229" y="80" key="SettingsEditor" timestamp="1606494543862">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state x="229" y="80" key="SettingsEditor/0.23.1440.836@0.23.1440.836" timestamp="1606207892144" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1606488291107">
-      <screen x="0" y="23" width="1440" height="836" />
+    <state x="229" y="80" key="SettingsEditor/0.23.1440.836@0.23.1440.836" timestamp="1606494543862" />
+    <state width="556" height="605" key="SwitcherDM" timestamp="1606719507884">
+      <screen x="1440" y="23" width="1600" height="1136" />
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.836@0.23.1440.836" timestamp="1606488291107" />
+    <state width="556" height="605" key="SwitcherDM/0.23.1440.877/1440.23.1600.1136@1440.23.1600.1136" timestamp="1606719507884" />
     <state x="385" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1606402386473">
       <screen x="0" y="23" width="1440" height="836" />
     </state>

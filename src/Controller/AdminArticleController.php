@@ -76,9 +76,18 @@ class AdminArticleController extends AbstractController
 
         $form->handleRequest($request);
 
+        // si le form a été envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
+            // alors je l'enregistre en BDD
             $entityManager->persist($article);
             $entityManager->flush();
+
+            $this->addFlash(
+                "success",
+                "L'article a été ajouté !"
+            );
+
+
             return $this->redirectToRoute('admin_article_list');
         }
 
@@ -86,13 +95,11 @@ class AdminArticleController extends AbstractController
         // et je créer une vue me permettant d'afficher le formulaire dans une page html.twig.
         $formView = $form->createView();
 
-
         // j'affiche le rendu d'un fichier twig compilé en HTML
         return $this->render('articles/admin/insert_form.html.twig', [
             'formView' => $formView
         ]);
     }
-
 
 
     /**
@@ -115,13 +122,13 @@ class AdminArticleController extends AbstractController
         // j'instancie la classe d'entité (un obbjet constituant un exemplaire de la classe) Article
 
         // je cible la modification dans ma page update_ via l'ID
-        // ce la selectionne l'id de la base de donnée (SELECT ...FROM ...WHERE id)
+        // cela selectionne l'id de la base de donnée (SELECT ...FROM ...WHERE id)
 
 
         $article = $articleRepository->find($id);
 
 
-        // je retourne la modification du titre de mon article
+
         if (is_null($article)) {
             return $this->redirectToRoute('admin_article_list');
         }
@@ -131,9 +138,6 @@ class AdminArticleController extends AbstractController
         $form->handleRequest($request);
 
 
-
-        // j'utilise la méthode persist de l'EntityManager pour "pré-sauvegarder" mon entité
-        // un peu comme un commit dans Git)
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($article);
             $entityManager->flush();
@@ -148,7 +152,6 @@ class AdminArticleController extends AbstractController
 
         $formView = $form->createView();
 
-        // j'affiche le rendu d'un fichier twig
         return $this->render('articles/admin/update_form.html.twig', [
             'formView' => $formView
         ]);

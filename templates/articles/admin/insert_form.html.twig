@@ -25,22 +25,30 @@
 
             {{ form_label(formView.title) }}
             {{ form_widget(formView.title, {'attr': {'class': 'margin'}}) }}
+            {{ form_errors(formView.title) }}
+
 
             {{ form_label(formView.content) }}
             {{ form_widget(formView.content, {'attr': {'class': 'margin'}}) }}
+            {{ form_errors(formView.content) }}
 
 
             {{ form_label(formView.image) }}
             {{ form_widget(formView.image, {'attr': {'class': 'margin'}}) }}
+            {{ form_errors(formView.image) }}
 
             {{ form_label(formView.datePublished) }}
             {{ form_widget(formView.datePublished, {'attr': {'class': 'margin'}}) }}
+            {{ form_errors(formView.datePublished) }}
 
             {{ form_label(formView.dateCreated) }}
             {{ form_widget(formView.dateCreated, {'attr': {'class': 'margin'}}) }}
+            {{ form_errors(formView.dateCreated) }}
 
             {{ form_label(formView.published) }}
             {{ form_widget(formView.published, {'attr': {'class': 'margin'}}) }}
+            {{ form_errors(formView.published) }}
+
 
             {{ form_widget(formView.Envoyer) }}
 

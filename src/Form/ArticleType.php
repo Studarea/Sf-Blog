@@ -33,6 +33,9 @@ class ArticleType extends AbstractType
         ;
     }
 
+
+    // mettre ici le commentaire
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

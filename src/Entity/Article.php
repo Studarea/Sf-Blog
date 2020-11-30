@@ -4,8 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-
-
+// un alias Assert qui utilise la classe Constraints
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 // Dans article : id, title, content, image, date de publication, date de création, est publié ? (oui / non)
@@ -43,32 +43,74 @@ class Article
     private $id;
 
 
+
     /**
-     * @ORM\Column(type="string", length=255)
-     */
+    * @ORM\Column(type="string", length=255)
+    *
+     *
+     * NotBlank() est une contrainte pour vérifier qu'une valeur n'est pas égale à null :
+    * @Assert\NotBlank(
+    *     message="le champs titre est vide"
+    * )
+    *
+    * @Assert\Length(
+    *     min= 4,
+    *     max= 50,
+    *     minMessage="Il n'y a pas assez de lettres",
+    *     maxMessage="Il n'y a trop de lettres !"
+    * )
+    */
+
+    /* propriété de la table ci-dessus */
     private $title;
 
 
     /**
      * @ORM\Column(type="text")
+     *
+     *
+     * NotBlank() : Pour vérifier qu'une valeur n'est pas égale à null :
+     * @Assert\NotBlank(
+     *     message="Merci de remplir le titre !"
+     * )
+     *
+     * @Assert\Length(
+     *     min= 20,
+     *     max= 1000,
+     *     minMessage="Il n'y a pas assez de lettres",
+     *     maxMessage="Il n'y a trop de lettres !"
+     * )
      */
+
     private $content;
 
 
     /**
      * @ORM\Column(type="string")
+     *
      */
+
     private $image;
 
 
     /**
      * @ORM\Column(type="date")
+     *
+     * @Assert\NotBlank (
+     *     message="le champs date est vide"
+     * )
+     *
      */
     private $datePublished;
 
 
     /**
      * @ORM\Column(type="date")
+     *
+     * @Assert\NotBlank (
+     *     message="le champs date est vide"
+     * )
+     *
      */
     private $dateCreated;
 
@@ -76,7 +118,10 @@ class Article
 
     /**
      * @ORM\Column(type="boolean")
+     *
+     *
      */
+
     private $published;
 
     public function getId(): ?int
@@ -125,7 +170,7 @@ class Article
         return $this->datePublished;
     }
 
-    public function setDatePublished(\DateTimeInterface $datePublished): self
+    public function setDatePublished($datePublished): self
     {
         $this->datePublished = $datePublished;
 
@@ -137,7 +182,7 @@ class Article
         return $this->dateCreated;
     }
 
-    public function setDateCreated(\DateTimeInterface $dateCreated): self
+    public function setDateCreated($dateCreated): self
     {
         $this->dateCreated = $dateCreated;
 
