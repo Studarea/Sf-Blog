@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -12,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductRepository")
  */
+
 class Category
 
 {
@@ -63,6 +66,34 @@ class Category
      * @ORM\Column(type="boolean")
      */
     private $published;
+
+
+
+
+    /**
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="category")
+     *
+     *
+     * La propriété articles représente la relation inverse du ManyToOne
+     * C'est donc un OneToMany. Il cible l'entité Article.
+     * Le mappedBy représente la propriété dans l'entité Article qui cible l'entité Category.
+     *
+     */
+    private $articles;
+
+
+
+    /**
+     * Dans la méthode constructor (qui est appelée automatiquement),
+     * à chaque fois que la classe est instanciée (donc avec le mot clé "new")
+     * je déclare que la propriété articles est un array (un ArrayCollection plus exactement,
+     * qui est un d'array virtuel "avec des supers pouvoirs")
+     */
+
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection();
+    }
 
 
 
@@ -127,6 +158,48 @@ class Category
     public function setPublished(bool $published): self
     {
         $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Article[]
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+
+
+    /**
+     * La méthode addArticle permet d'ajouter un article dans une catégorie, sans écraser les autres articles.
+     * Vu que la propriété articles est un tableau, on peut avoir plusieurs articles
+     */
+
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * La méthode removeArticle permet supprimer un article de la rubrique catégorie,
+     * sans supprimer les autres articles
+     */
+
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->removeElement($article)) {
+            // set the owning side to null (unless already changed)
+            if ($article->getCategory() === $this) {
+                $article->setCategory(null);
+            }
+        }
 
         return $this;
     }

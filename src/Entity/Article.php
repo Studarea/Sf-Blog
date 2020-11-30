@@ -121,8 +121,19 @@ class Article
      *
      *
      */
-
     private $published;
+
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="articles")
+     *
+     * * La propriété category représente la relation inverse du OneToMany
+     *  C'est donc un ManyToOne. Il cible l'entité Category.
+     *  Le targetEntity représente la propriété dans l'entité Category qui cible l'entité Article.
+     *
+     */
+    private $category;
 
     public function getId(): ?int
     {
@@ -197,6 +208,29 @@ class Article
     public function setPublished(bool $published): self
     {
         $this->published = $published;
+
+        return $this;
+    }
+
+
+
+    /**
+     * La méthode getCategory permet de récupérer une catégorie pour un article
+     */
+
+    public function getCategory(): ?category
+    {
+        return $this->category;
+    }
+
+
+    /**
+     * La méthode setCategory permet de "modifier" une catégorie pour un article
+     */
+
+    public function setCategory(?category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
