@@ -47,14 +47,14 @@
             {{ form_widget(formView.dateCreated, {'attr': {'class': 'margin'}}) }}
             {{ form_errors(formView.dateCreated) }}
 
+            {{ form_label(formView.category) }}
+            {{ form_widget(formView.category, {'attr': {'class': 'margin'}}) }}
+            {{ form_errors(formView.category) }}
+
 
             {{ form_label(formView.published) }}
             {{ form_widget(formView.published, {'attr': {'class': 'margin'}}) }}
             {{ form_errors(formView.published) }}
-
-            {{ form_label(formView.category) }}
-            {{ form_widget(formView.category, {'attr': {'class': 'margin'}}) }}
-            {{ form_errors(formView.category) }}
 
 
             {{ form_widget(formView.Envoyer) }}
