@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Article;
+use App\Entity\Category;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,6 +21,11 @@ class ArticleType extends AbstractType
 
         // Builder est un constructeur qui génère le formulaire
         $builder
+            // dans mon gabarit de formulaire, je créé "l'input" category
+            // relié à ma propriété category dans l'entité Article
+            // Vu que c'est une relation vers une autre entité (une autre table)
+            // je lui passe en type "EntityType"
+
             ->add('title')
             ->add('content')
             ->add('image')
@@ -29,6 +36,13 @@ class ArticleType extends AbstractType
                 'widget' => 'single_text'
             ])
             ->add('published')
+            ->add('category', EntityType::class, [
+                'class'=>Category::class,
+                // dans l'entité catégorie je cible le title
+                // dans la liste déroulante je choisi la propriété à afficher
+                'choice_label' => 'title'
+            ])
+
             ->add('Envoyer', SubmitType::class)
         ;
     }

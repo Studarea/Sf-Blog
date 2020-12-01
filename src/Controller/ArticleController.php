@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 
-use App\Repository\articleRepository;
+use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 

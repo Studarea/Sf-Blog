@@ -4,7 +4,7 @@
 namespace App\Controller;
 
 
-use App\Repository\categoryRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,7 +14,7 @@ class CategoryController extends AbstractController
     /**
      * @Route("/categories/list", name="category_list")
      */
-    public function categoriesList(categoryRepository $categoryRepository)
+    public function categoriesList(CategoryRepository $categoryRepository)
     {
 
         $category = $categoryRepository->findAll();

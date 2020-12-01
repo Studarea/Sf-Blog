@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 // L'annotation Id identifie la clé primaire de la table.
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
  */
 
 class Category

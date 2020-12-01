@@ -5,7 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Form\CategoriesType;
-use App\Repository\categoryRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,7 +17,7 @@ class AdminCategoryController extends AbstractController
     /**
      * @Route("/admin/category/list", name="admin_category_list")
      */
-    public function categoryList(categoryRepository $categoryRepository)
+    public function categoryList(CategoryRepository $categoryRepository)
     {
 
         $category = $categoryRepository->findAll();
@@ -112,7 +112,7 @@ class AdminCategoryController extends AbstractController
      */
 
     // autowire
-    public function updateCategory($id, categoryRepository $categoryRepository, EntityManagerInterface $entityManager, Request $request)
+    public function updateCategory($id, CategoryRepository $categoryRepository, EntityManagerInterface $entityManager, Request $request)
 
     {
 

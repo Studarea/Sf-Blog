@@ -5,7 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Form\ArticleType;
-use App\Repository\articleRepository;
+use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -17,7 +17,7 @@ class AdminArticleController extends AbstractController
     /**
      * @Route("/admin/articles/list", name="admin_article_list")
      */
-    public function articleList(articleRepository $articleRepository)
+    public function articleList(ArticleRepository $articleRepository)
     {
 
         $articles = $articleRepository->findAll();
