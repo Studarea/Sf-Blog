@@ -5,7 +5,6 @@
 
 
 
-
 {% block main %}
 <main>
     <section>
@@ -14,8 +13,18 @@
 
         {% for article in articles %}
             {# je fais le lien vers la page article #}
-            <div class="container" ><a href="{{ path('article_show', {'id': article.id}) }}">
-                <img src="{{ article.image }}" alt="image" class="img"/></a>
+            <div class="contenor-olle" >
+
+                <a href="{{ path('article_show', {'id': article.id}) }}">
+                    {% if article.imageFileName %}
+                        {#
+                        je récupère le nom du fichier uploadé
+                        pour cet article que je concatène avec le dossier
+                        dans lequel il a été uploadé
+                        #}
+
+                        <img src="{{ asset('uploads/articles/' ~ article.imageFileName) }}" alt="image" class="img">
+                    {% endif %}
                 <p>{{ article.title }} </p><br />
                 <a href="{{ path('article_show', {'id': article.id}) }}"><p>{{ article.content }}</p></a>
                 {# j'affiche la date de création et publiée en ajoutant le filtre qui affiche correctmt la date  #}
@@ -34,6 +43,7 @@
                 {#  Je créer le lien qui va recréer un article  #}
                 {#  <a href="{{ path('article_form') }}">
                     <div>> créer un nouvel article</div></a> #}
+                </a>
             </div>
         {% endfor %}
 

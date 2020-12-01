@@ -75,7 +75,14 @@ header, footer {
 
 .img {
     width: 100%;
+
 }
+
+.contenor-olle {
+    width:30%;
+    margin:20px;
+}
+
 
 
 section {
@@ -86,15 +93,8 @@ section {
 }
 
 
-.container {
-    width:30%;
-    margin:20px;
-}
 
-.container-content {
-    width:100%;
 
-}
 
 #home-background {
     background-image: url("../img/chimpanz-01.png");

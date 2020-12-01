@@ -86,12 +86,7 @@ class Article
     private $content;
 
 
-    /**
-     * @ORM\Column(type="string")
-     *
-     */
 
-    private $image;
 
 
     /**
@@ -124,6 +119,12 @@ class Article
      */
     private $published;
 
+
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $imageFileName;
 
 
     /**
@@ -165,17 +166,7 @@ class Article
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
 
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 
     public function getDatePublished(): ?\DateTimeInterface
     {
@@ -235,6 +226,24 @@ class Article
 
         return $this;
     }
+
+
+    /**
+     * @return mixed
+     */
+    public function getImageFileName()
+    {
+        return $this->imageFileName;
+    }
+
+    /**
+     * @param mixed $imageFileName
+     */
+    public function setImageFileName($imageFileName): void
+    {
+        $this->imageFileName = $imageFileName;
+    }
+
 
 
 }

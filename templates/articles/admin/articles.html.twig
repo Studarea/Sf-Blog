@@ -4,14 +4,12 @@
 {% block title %}Les Articles{% endblock %}
 
 
-
-
 {% block main %}
 
 
 <main>
     <section>
-    <div><a href="{{ path('admin_article_form') }}">créer un article</a></div>
+    <div><a href="{{ path('admin_article_form') }}">Créer un article</a></div>
     </section>
 
     <section>
@@ -29,10 +27,14 @@
 
         {#  le premier c'est la variable de twig in nom de la variable du controleur #}
 
+
         {% for article in articles %}
             {# je fais le lien vers la page article #}
-            <div class="container" ><a href="{{ path('article_show', {'id': article.id}) }}">
-                    <img src="{{ article.image }}" alt="image" class="img"/></a>
+            <div class="contenor-olle">
+
+                <a href="{{ path('article_show', {'id': article.id}) }}">
+                    <div><img src="{{ asset('uploads/articles/' ~ article.imageFileName) }}" alt="image" class="img"></div>
+                </a>
                 <p>{{ article.title }} </p><br />
                 <p>{{ article.category.title }} </p><br />
                 <a href="{{ path('article_show', {'id': article.id}) }}"><p>{{ article.content }}</p></a>
@@ -51,10 +53,9 @@
                 {#  Je créer le lien qui va recréer un article  #}
                 <a href="{{ path('admin_article_form') }}">
                     <div>> créer un nouvel article</div></a>
+
             </div>
         {% endfor %}
-
-
 
 
     </section>

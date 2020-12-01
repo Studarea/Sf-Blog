@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AdminArticleController extends AbstractController
 {
@@ -47,7 +48,8 @@ class AdminArticleController extends AbstractController
 
     // EntityManager gère les données avec Doctrine, permet le CUD (create, update, delete)
     // Entity Manager fait donc le lien entre les "Entités" (simples objets PHP), et la base de données :
-    public function insertStaticArticle(Request $request, EntityManagerInterface $entityManager)
+    // SluggerInterface évite les carractères spéciaux dans le nom des fichiers enregistrés
+    public function insertStaticArticle(Request $request, EntityManagerInterface $entityManager,  SluggerInterface $slugger)
     {
 
 
@@ -78,6 +80,39 @@ class AdminArticleController extends AbstractController
 
         // si le form a été envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // Je récupère mon fichier uploadé dans le formulaire
+            // Auparavant dans le form ArticleType j'ai mis ce champs en 'mapped => false"
+            $imageFile = $form->get('imageFileName')->getData();
+
+            // Si j'ai bien récupéré une image, je veux la déplacer puis enregistrer son nom en bdd
+            // (il peut y avoir des articles sans images)
+            if ($imageFile) {
+
+                // je récupère le nom de l'image
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                // grâce à la classe Slugger, je transforme le nom de mon image
+                // pour sortir tous les caractères spéciaux (espaces etc)
+                $safeFilename = $slugger->slug($originalFilename);
+
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
+
+
+                // je déplace l'image dans un dossier que j'ai spécifié en parametre
+                // (dans le fichier config/services.yaml)
+                $imageFile->move(
+                    $this->getParameter('images_directory'),
+                    $newFilename
+                );
+
+                // une fois que j'ai déplacé l'image, j'enregistre le nom de l'image
+                // dans mon entité (pour qu'elle soit sauvée en bdd)
+                $article->setImageFileName($newFilename);
+            }
+
+
+
             // alors je l'enregistre en BDD
             $entityManager->persist($article);
             $entityManager->flush();
@@ -115,7 +150,7 @@ class AdminArticleController extends AbstractController
      */
 
     // autowire
-    public function updateArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager, Request $request)
+    public function updateArticle($id, ArticleRepository $articleRepository, EntityManagerInterface $entityManager, Request $request, SluggerInterface $slugger)
 
     {
 
@@ -139,8 +174,43 @@ class AdminArticleController extends AbstractController
 
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            // Je récupère mon fichier uploadé dans le formulaire
+            // Auparavant dans le form ArticleType j'ai mis ce champs en 'mapped => false"
+            $imageFile = $form->get('imageFileName')->getData();
+
+            // Si j'ai bien récupéré une image, je veux la déplacer puis enregistrer son nom en bdd
+            // (il peut y avoir des articles sans images)
+            if ($imageFile) {
+
+                // Je récupère le nom de l'image
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                // Grâce à la classe Slugger, je transforme le nom de mon image
+                // pour sortir tous les caractères spéciaux (espaces etc)
+                $safeFilename = $slugger->slug($originalFilename);
+
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFile->guessExtension();
+
+
+                // Je déplace l'image (move) dans un dossier que j'ai spécifié en paramètre
+                // (dans le fichier config/services.yaml)
+                $imageFile->move(
+                    $this->getParameter('images_directory'),
+                    $newFilename
+                );
+
+                // Une fois que j'ai déplacé l'image, j'enregistre le nom de l'image dans mon Entité
+                // (pour qu'elle soit enregistrée en bdd)
+                $article->setImageFileName($newFilename);
+            }
+
+
+            // Puis l'enregistre en BDD
             $entityManager->persist($article);
             $entityManager->flush();
+
 
             $this->addFlash(
                 "success",

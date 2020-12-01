@@ -21,8 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="ee947b1c-3901-41fd-b668-37a1a24ec1b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/admin/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/articles.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/admin/insert_form.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/articles/front/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/articles/front/articles.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +216,9 @@
       <workItem from="1606759582070" duration="486000" />
       <workItem from="1606760378084" duration="13000" />
       <workItem from="1606760414941" duration="53000" />
-      <workItem from="1606811193633" duration="3845000" />
+      <workItem from="1606811193633" duration="7207000" />
+      <workItem from="1606826727037" duration="47000" />
+      <workItem from="1606826777681" duration="6161000" />
     </task>
     <servers />
   </component>
@@ -239,18 +250,18 @@
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="458" y="195" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606464245345" />
-    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606480270028">
+    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606822343988">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606480270028" />
+    <state x="458" y="203" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.836@0.23.1440.836" timestamp="1606822343988" />
     <state x="600" y="345" key="Github.ShareDialog" timestamp="1606146693382">
       <screen x="0" y="23" width="1440" height="836" />
     </state>
     <state x="600" y="345" key="Github.ShareDialog/0.23.1440.836@0.23.1440.836" timestamp="1606146693382" />
-    <state x="1959" y="228" key="NewPhpClassDialog" timestamp="1606414355552">
-      <screen x="1440" y="23" width="1600" height="1136" />
+    <state x="467" y="174" key="NewPhpClassDialog" timestamp="1606822327014">
+      <screen x="0" y="23" width="1440" height="836" />
     </state>
-    <state x="467" y="174" key="NewPhpClassDialog/0.23.1440.836@0.23.1440.836" timestamp="1606406920949" />
+    <state x="467" y="174" key="NewPhpClassDialog/0.23.1440.836@0.23.1440.836" timestamp="1606822327014" />
     <state x="1959" y="228" key="NewPhpClassDialog/0.23.1440.877/1440.23.1600.1136@1440.23.1600.1136" timestamp="1606414355552" />
     <state x="543" y="371" key="NewPhpFileDialog" timestamp="1606211226291">
       <screen x="0" y="23" width="1440" height="836" />
@@ -265,6 +276,10 @@
     </state>
     <state width="500" height="445" key="SwitcherDM/0.23.1440.836@0.23.1440.836" timestamp="1606488291107" />
     <state width="556" height="605" key="SwitcherDM/0.23.1440.877/1440.23.1600.1136@1440.23.1600.1136" timestamp="1606719507884" />
+    <state x="427" y="167" width="586" height="548" key="find.popup" timestamp="1606836157021">
+      <screen x="0" y="23" width="1440" height="836" />
+    </state>
+    <state x="427" y="167" width="586" height="548" key="find.popup/0.23.1440.836@0.23.1440.836" timestamp="1606836157021" />
     <state x="385" y="183" width="670" height="676" key="search.everywhere.popup" timestamp="1606402386473">
       <screen x="0" y="23" width="1440" height="836" />
     </state>

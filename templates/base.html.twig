@@ -7,6 +7,7 @@
     <meta name="description" content="Super page !" />
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css' ) }}" >
 
+
     <title>{% block title %}super{% endblock title %}</title>
 </head>
 <body>
@@ -26,6 +27,10 @@
                 </ul>
             </div>
         </div>
+
+        <div><a href="{{ path('app_logout') }}">Deconnexion</a></div>
+
+
 
         {% for message in app.flashes('success') %}
             <p>{{ message }}</p>

@@ -1,8 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Page de connexion =)){% endblock %}
 
 {% block main %}
+
+    <div class="container">
+
+
+    {# Voici le formulaire généré par bin/console make:auth #}
+    {# !important d'y changer le nom du %block body par défaut en "nom de notre block" #}
+
+
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -14,10 +22,11 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
+
+    <h1 class="h3 mb-3 font-weight-normal">Please connecte toiii !</h1>
+    <label for="inputEmail">Votre mail</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
+    <label for="inputPassword">Votre mot de passe</label>
     <input type="password" name="password" id="inputPassword" class="form-control" required>
 
     <input type="hidden" name="_csrf_token"
@@ -35,8 +44,7 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
+    <button class="btn btn-lg btn-primary my-3 type="submit">Youpi</button>
 </form>
+    </div>
 {% endblock %}
